@@ -15,7 +15,7 @@ def run_inference(model, tokenizer):
 def main():
     # ✅ Load your fine-tuned model from the local directory
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name = "./llama3_2_3b_medical_assistant-full",  # <--- local path
+        model_name = "./llama3_2_3b_medical_assistant",  # <--- local path
         max_seq_length = 1024,
         dtype = None,
         load_in_4bit = False,

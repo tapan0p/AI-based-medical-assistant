@@ -20,9 +20,9 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 FastLanguageModel.for_inference(model)
 
 # --------------------------
-# Load dataset (first 256 samples)
+# Load dataset (first 64 samples)
 # --------------------------
-dataset = load_dataset("keivalya/MedQuad-MedicalQnADataset", split="train[:256]")
+dataset = load_dataset("keivalya/MedQuad-MedicalQnADataset", split="train[:64]")
 
 # --------------------------
 # Prompt template
@@ -91,6 +91,6 @@ rouge_l = rouge_result["rougeL"]
 # --------------------------
 # Final Report
 # --------------------------
-print("\n Evaluation Results (on 256 samples):")
+print("\n Evaluation Results (on 64 samples):")
 print(f"BERTScore F1: {bertscore_f1:.4f}")
 print(f"ROUGE-L F1 : {rouge_l:.4f}")

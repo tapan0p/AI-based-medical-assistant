@@ -12,9 +12,7 @@ def push_merged_model(repo_id: str):
     # Load the LoRA fine-tuned model
     print("Loading LoRA model...")
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name = "unsloth/Llama-3.2-3B",   # Base model name
-        lora_weights = "lora_adapter",         # LoRA weights after fine-tuning
-        tokenizer_path = "tokenizer",          # Load tokenizer from local directory
+        model_name = "lora_adapter",           # Load from  saved LoRA adapter
         max_seq_length = MAX_SEQ_LENGTH,
         dtype = DTYPE,
         load_in_4bit = False,
@@ -22,7 +20,7 @@ def push_merged_model(repo_id: str):
 
     # Merge LoRA weights into base model
     print("Merging LoRA into base model...")
-    model = model.merge_and_unload(safe_merge=True)
+    model = model.merge_and_unload()
 
     # Save merged model locally
     save_path = "llama3_2_3b_medical_assistant"
@@ -32,7 +30,7 @@ def push_merged_model(repo_id: str):
 
     # Push to Hugging Face Hub
     print(f"Pushing model to Hugging Face Hub: {repo_id}")
-    model.push_to_hub(repo_id)
+    model.push_to_hub(repo_id, safe_serialization=True)
     tokenizer.push_to_hub(repo_id)
 
     print("Upload complete!")

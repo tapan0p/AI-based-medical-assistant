@@ -10,3 +10,5 @@ llama3_2*
 .windsurf-server 
 __pycache__/ 
 unsloth_compiled_cache/
+lora_adapter 
+tokenizer

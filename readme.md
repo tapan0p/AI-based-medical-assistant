@@ -33,13 +33,8 @@ AI-based medical assistant using fine-tuned Llama 3.2 3B language model with Med
 
 ## Usage
 
-```python
-from medical_assistant import MedicalAssistant
+<img src="image.png" alt="Description" style="width: 300px; height: 200px;">
 
-assistant = MedicalAssistant()
-response = assistant.generate_response("What are the symptoms of diabetes?")
-print(response)
-```
 
 ## Disclaimer
 
