@@ -33,7 +33,7 @@ AI-based medical assistant using fine-tuned Llama 3.2 3B language model with Med
 
 ## Usage
 
-<img src="image.png" alt="Description" style="width: 800px; height: 500px;">
+<img src="image.png" alt="Description" style="width: 800px; height: 300px;">
 
 
 ## Disclaimer
