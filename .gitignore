@@ -1,0 +1,12 @@
+outputs 
+llama3_2*
+.triton
+.lightning_studio
+.cursor-server 
+.idea/
+.vscode-server
+.vscode/
+.wget-hsts 
+.windsurf-server 
+__pycache__/ 
+unsloth_compiled_cache/
