@@ -13,9 +13,10 @@ def push_merged_model(repo_id: str):
     print("Loading LoRA model...")
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name = "llama3_2_3b_medical_assistant",  # Local path to fine-tuned model
+        lora_weights = "lora_adapter", 
         max_seq_length = MAX_SEQ_LENGTH,
         dtype = DTYPE,
-        load_in_4bit = LOAD_IN_4BIT,
+        load_in_4bit = False,
     )
 
     # Merge LoRA weights into base model
@@ -26,7 +27,7 @@ def push_merged_model(repo_id: str):
     print("Saving merged model locally...")
     save_path = "llama3_2_3b_medical_assistant-full"
     model.save_pretrained(save_path, safe_serialization=True)
-    tokenizer.save_pretrained(save_path)
+    tokenizer.save_pretrained(save_path,"llama3_2_3b_medical_assistant-full")
 
     # Push to Hugging Face Hub
     print(f"Pushing model to Hugging Face Hub at: {repo_id}")

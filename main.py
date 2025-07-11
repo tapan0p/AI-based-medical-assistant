@@ -9,8 +9,8 @@ def main():
     train_model(model, tokenizer, dataset)
 
     # Save model and tokenizer locally
-    model.save_pretrained("llama3_2_3b_medical_assistant")
-    tokenizer.save_pretrained("llama3_2_3b_medical_assistant")
+    model.save_pretrained("lora_adapter")
+    tokenizer.save_pretrained("tokenizer")
 
 
     # run a quick test
